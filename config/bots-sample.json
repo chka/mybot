@@ -1,0 +1,40 @@
+{
+	"personality": {
+		"name": "Scarecrow",
+		"brain": {
+			"backend": "RiveScript",
+			"replies": "./replies/standard"
+		}
+	},
+	"listeners": [
+		{
+			"id": "Slackbot1",
+			"type": "Slack",
+			"enabled": false,
+			"settings": {
+				"api_token": "XXX-SLACK-API-TOKEN-XXX",
+				"username": "scarecrow",
+				"team": "your-team.slack.com"
+			}
+		},
+		{
+			"id": "XMPPBot1",
+			"type": "XMPP",
+			"enabled": false,
+			"settings": {
+				"username": "scarecrow.bot@gmail.com",
+				"password": "XXX-PASSWORD-XXX",
+				"server": "talk.google.com",
+				"port": "443"
+			}
+		},
+		{
+			"id": "Console",
+			"type": "Console",
+			"enabled": true,
+			"settings": {
+				"username": "Scarecrow"
+			}
+		}
+	]
+}

@@ -1,0 +1,15 @@
+// Administrative functions.
+
++ shutdown{weight=10000}
+* <id> eq <bot master> => Shutting down... (j/k, not supported)
+- {@botmaster only}
+
++ botmaster only
+- This command can only be used by my botmaster. <id> != <bot master>
+
++ am i an admin
+* <get isAdmin> == true => Yes, you are an admin user.
+- No, you are not an admin.
+
++ is this a group chat
+- Is group chat? <get isGroupChat>
