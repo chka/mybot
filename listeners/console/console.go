@@ -2,10 +2,11 @@ package console
 
 import (
 	"fmt"
-	"github.com/jprichardson/readline-go"
-	"github.com/aichaos/scarecrow/listeners"
-	"github.com/aichaos/scarecrow/types"
 	"os"
+	"scarecrow/listeners"
+	"scarecrow/types"
+
+	"scarecrow/readline-go"
 )
 
 type ConsoleListener struct {
@@ -14,7 +15,7 @@ type ConsoleListener struct {
 	answerChannel  chan types.CommunicationChannel
 
 	// Configuration values for the Console listener.
-	id string
+	id       string
 	username string
 
 	// Internal data.
@@ -28,10 +29,10 @@ func init() {
 // New creates a new Slack Listener.
 func (self ConsoleListener) New(config types.ListenerConfig, request, answer chan types.CommunicationChannel) listeners.Listener {
 	listener := ConsoleListener{
-		id: config.Id,
+		id:             config.Id,
 		requestChannel: request,
-		answerChannel: answer,
-		username: config.Settings["username"],
+		answerChannel:  answer,
+		username:       config.Settings["username"],
 	}
 
 	return listener
@@ -88,7 +89,7 @@ func (self *ConsoleListener) OnMessage(msg string) {
 		Data: &types.ReplyRequest{
 			Listener: "CLI",
 			Username: "console",
-			Message: msg,
+			Message:  msg,
 		},
 	}
 	self.requestChannel <- request

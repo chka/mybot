@@ -2,10 +2,10 @@ package scarecrow
 
 import (
 	"fmt"
-	rivescript "github.com/aichaos/rivescript-go"
-	"github.com/aichaos/rivescript-go/lang/rivescript_js"
 	"os"
 	"regexp"
+	rivescript "scarecrow/rivescript-go"
+	"scarecrow/rivescript-go/lang/rivescript_js"
 	"strings"
 	"time"
 )
